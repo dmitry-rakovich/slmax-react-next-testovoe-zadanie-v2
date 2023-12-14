@@ -19,6 +19,7 @@ const Header = () => {
                 session?.data
                     ? <>
                         <Link className={pathName === '/gallery' ? styles.active : ''} href={'/gallery'}>Галерея</Link>
+                        <Link className={pathName === '/favorites' ? styles.active : ''} href={'/favorites'}>Избранное</Link>
                         <Link href='#' onClick={() => signOut({ callbackUrl: '/' })}>Выйти</Link>
                     </>
                     : <Link className={pathName === '/login' ? styles.active : ''} href={'/login'}>Логин</Link>

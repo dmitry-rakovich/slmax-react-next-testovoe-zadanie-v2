@@ -1,4 +1,4 @@
-import { IPicture, IResponse, ISearchParams } from "@/types"
+import { IResponse, ISearchParams } from "@/types"
 const URL = 'https://api.unsplash.com/search/photos'
 
 export const getPhotosByQuery = async ({ filter, sort, page }: ISearchParams): Promise<IResponse> => {

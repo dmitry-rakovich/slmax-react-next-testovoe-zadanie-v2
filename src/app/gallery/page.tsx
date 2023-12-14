@@ -18,6 +18,7 @@ export default function Home() {
     const [pages, setPages] = useState(1)
     const [pictures, setPictures] = useState<IPicture[]>([])
     const [loading, setLoading] = useState(true)
+    const [favoritesImages, setFavoritesImages] = useState<IPicture[]>([])
     const session = useSession()
 
     useEffect(() => {
@@ -32,6 +33,9 @@ export default function Home() {
             })
             .finally(() => setLoading(false))
     }, [filter, sort, page])
+    useEffect(() => {
+        setFavoritesImages(JSON.parse(localStorage.getItem('unsplash-favorites')!) || [])
+    }, [])
     if (!session.data) redirect('/login')
     return (
         <>
@@ -42,7 +46,7 @@ export default function Home() {
                     ? <h1>загрузка</h1>
                     : pictures.length > 0
                         ? <>
-                            <Pictures pictures={pictures} />
+                            <Pictures pictures={pictures} favorites={favoritesImages} setFavorites={setFavoritesImages} />
                             <Pagination onPage={setPage} pages={pages} />
                         </>
                         : <h1>не найдено</h1>
