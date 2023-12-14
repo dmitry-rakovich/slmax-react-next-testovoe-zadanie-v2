@@ -14,3 +14,8 @@ npm run dev
 - TypeScript
 - Next Auth
 - React Paginate
+
+## Переменные для файла .env.local
+NEXT_PUBLIC_ACCESS_KEY=Kb67GTT220w7mVhrMBO88X3eZ86qZ0LVNiMZXiyjIf8
+NEXTAUTH_SECRET=secret
+NEXTAUTH_URL=http://localhost:3000
