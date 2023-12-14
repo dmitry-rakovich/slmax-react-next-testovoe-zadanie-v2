@@ -1,21 +1,18 @@
+'use client'
 import { IPicture } from '@/types'
 import styles from './components.module.css'
+import PictureItem from './PictureItem'
 
 type Props = {
-    pictures: IPicture[]
+    pictures: IPicture[],
+    favorites: IPicture[],
+    setFavorites: (arr: IPicture[]) => void
 }
-const Pictures = ({ pictures }: Props) => {
+const Pictures = ({ pictures, favorites, setFavorites }: Props) => {
     return (
         <div className={styles.grid}>
             {pictures.map((picture) => (
-                <div key={picture.id}>
-                    <img
-                        src={picture.urls.small}
-                        alt={picture.alt_description}
-                        width={200}
-                        height={200}
-                    />
-                </div>
+                <PictureItem key={picture.id} picture={picture} favorites={favorites} setFavorites={setFavorites} />
             ))}
         </div>
     )

@@ -38,3 +38,7 @@
     justify-items: center;
     gap: 20px;
 }
+
+.picture-container {
+    display: grid;
+}
