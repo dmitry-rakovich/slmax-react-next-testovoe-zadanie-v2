@@ -1,0 +1,40 @@
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    background-color: grey;
+    color: #fff;
+}
+
+.header a {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.header a:hover {
+    background-color: #5E96FC;
+    color: #fff;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.active {
+    background-color: #5E96FC;
+    border: 2px solid #5E96FC;
+    color: #fff;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    gap: 20px;
+}
